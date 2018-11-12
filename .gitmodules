@@ -1,3 +1,3 @@
-[submodule "src/submodules/mymonero-core-cpp"]
-	path = src/submodules/mymonero-core-cpp
-	url = https://github.com/mymonero/mymonero-core-cpp
+[submodule "src/submodules/Pyrex-core-cpp"]
+	path = src/submodules/Pyrex-core-cpp
+	url = https://github.com/pyrex-coin/Pyrex-core-cpp

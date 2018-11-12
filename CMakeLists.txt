@@ -8,7 +8,7 @@ include_directories("build/boost/include") # must exist already - run bin/build-
 #
 include_directories("src")
 #
-set(MYMONERO_CORE_CPP "src/submodules/mymonero-core-cpp")
+set(MYMONERO_CORE_CPP "src/submodules/Pyrex-core-cpp")
 set(MYMONERO_CORE_CPP_SRC "${MYMONERO_CORE_CPP}/src")
 include_directories("${MYMONERO_CORE_CPP}/src")
 #
