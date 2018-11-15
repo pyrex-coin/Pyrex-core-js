@@ -494,7 +494,7 @@ class MyMoneroCoreBridge
 		const ret_string = this.Module.send_step1__prepare_params_for_get_decoys(args_str);
 		const ret = JSON.parse(ret_string);
 		// special case: err_code of needMoreMoneyThanFound; rewrite err_msg
-		if (ret.err_code == "90" || ret.err_code == 90) { // declared in mymonero-core-cpp/src/monero_transfer_utils.hpp
+		if (ret.err_code == "90" || ret.err_code == 90) { // declared in myPyrex-core-cpp/src/monero_transfer_utils.hpp
 			return { 
 				required_balance: ret.required_balance,
 				spendable_balance: ret.spendable_balance,

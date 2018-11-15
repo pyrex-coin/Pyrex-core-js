@@ -148,7 +148,7 @@ Functions for generating and parsing monero request URIs. Supports multiple curr
 
 Contains convenience implementations such as `SendFunds(…)` for constructing arguments to `monero_utils/monero_utils:create_transaction`.
 
-This function will likely make it into `mymonero-core-cpp` in the future.
+This function will likely make it into `myPyrex-core-cpp` in the future.
 
 One of the arguments to `SendFunds`, `preSuccess_nonTerminal_statusUpdate_fn`, supplies status updates via codes that can be translated into messages. Codes are located on `SendFunds_ProcessStep_Code` and messages are located at `SendFunds_ProcessStep_MessageSuffix`.
 
@@ -182,7 +182,7 @@ Each of these functions is implemented<sup>*</sup> in `monero_utils/MyMoneroCore
 
 The arguments and return values for these functions are explicitly called out by [MyMoneroCoreBridge.js](https://github.com/mymonero/mymonero-core-js/blob/develop/monero_utils/MyMoneroCoreBridge.js), so that will be the most complete documentation for the moment. Return values are all embedded within a JS dictionary unless they're singular values. Errors are thrown when functions are called via `monero_utils`.
 
-<sup>* The functions' actual implementations are in WebAssembly which is produced via emscripten from exactly matching C++ functions in [mymonero-core-cpp](https://github.com/mymonero/mymonero-core-cpp). This allows core implementation to be shared across all platforms.</sup>
+<sup>* The functions' actual implementations are in WebAssembly which is produced via emscripten from exactly matching C++ functions in [myPyrex-core-cpp](https://github.com/mymonero/myPyrex-core-cpp). This allows core implementation to be shared across all platforms.</sup>
 
 <sup>** for proper exception handling given that `MyMoneroCoreBridge` functions return `{ err_msg: }` rather than throwing</sup>
 
@@ -251,7 +251,7 @@ estimated_tx_network_fee
 
 ##### Creating Transactions
 
-These functions support Bulletproofs under the hood but don't take `bulletproof` as a parameter because that behavior is controlled by a hardcoded [`use_fork_rules` function](https://github.com/mymonero/mymonero-core-cpp/blob/master/src/monero_fork_rules.cpp#L49). Bulletproofs is not currently enabled.
+These functions support Bulletproofs under the hood but don't take `bulletproof` as a parameter because that behavior is controlled by a hardcoded [`use_fork_rules` function](https://github.com/mymonero/myPyrex-core-cpp/blob/master/src/monero_fork_rules.cpp#L49). Bulletproofs is not currently enabled.
 
 ```
 create_signed_transaction
