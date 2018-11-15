@@ -4,7 +4,7 @@ PLATFORM="emscripten"
 
 SRC_DIR="contrib/boost-sdk"
 INSTALL_DIR="build/boost"
-EMSCRIPTEN = "/home/techpyrex/emsdk/emscripten/1.38.19/"
+EMSCRIPTEN="/home/techpyrex/emsdk/emscripten/1.38.19/"
 SRC_PATH="$(pwd)/$SRC_DIR"
 INSTALL_PATH="$(pwd)/$INSTALL_DIR"
 JAM_CONFIG_PATH="$(pwd)/configs/$PLATFORM.jam"
