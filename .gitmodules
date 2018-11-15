@@ -1,3 +1,0 @@
-[submodule "src/submodules/Pyrex-core-cpp"]
-	path = src/submodules/Pyrex-core-cpp
-	url = https://github.com/pyrex-coin/Pyrex-core-cpp.git
