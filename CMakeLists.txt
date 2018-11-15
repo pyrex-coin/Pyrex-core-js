@@ -12,7 +12,7 @@ set(MYMONERO_CORE_CPP "src/submodules/Pyrex-core-cpp")
 set(MYMONERO_CORE_CPP_SRC "${MYMONERO_CORE_CPP}/src")
 include_directories("${MYMONERO_CORE_CPP}/src")
 #
-set(MONERO_SRC "${MYMONERO_CORE_CPP}/contrib/monero-core-custom")
+set(MONERO_SRC "${MYMONERO_CORE_CPP}/contrib/Pyrex-core-custom")
 include_directories(${MONERO_SRC})
 include_directories("${MONERO_SRC}/epee/include")
 include_directories("${MONERO_SRC}/common")
