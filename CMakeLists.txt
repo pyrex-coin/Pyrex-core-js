@@ -192,7 +192,7 @@ set (
 -s 'EXPORT_NAME=\"MyMoneroCoreCpp\"' \
 --llvm-lto 1 \
 -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
--s ASSERTIONS=0 \
+-s ASSERTIONS=1 \
 -s EXIT_RUNTIME=0 \
 -s \"BINARYEN_TRAP_MODE='clamp'\" \
 -s PRECISE_F32=1 \
@@ -200,6 +200,7 @@ set (
 -s EXCEPTION_DEBUG=1 \
 -s DEMANGLE_SUPPORT=1 \
 -s NO_DYNAMIC_EXECUTION=1 \
+-s SAFE_HEAP=1 \
 "
     # • Disabling exception catching does not introduce silent failures 
     # • Probably don't need PRECISE_F32 but wouldn't want to not use it
