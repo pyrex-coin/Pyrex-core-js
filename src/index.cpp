@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <emscripten/bind.h>
+using namespace emscripten;
 //
 #include "serial_bridge_index.hpp"
 //
