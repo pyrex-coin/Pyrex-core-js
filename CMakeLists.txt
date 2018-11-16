@@ -193,6 +193,7 @@ set (
 --llvm-lto 1 \
 -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
 -s ASSERTIONS=1 \
+-s \"MM_EM_ASMJS ='ON'\" \
 -s EXIT_RUNTIME=0 \
 -s \"BINARYEN_TRAP_MODE='clamp'\" \
 -s PRECISE_F32=1 \
