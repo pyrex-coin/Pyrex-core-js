@@ -193,7 +193,6 @@ set (
 --llvm-lto 1 \
 -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
 -s ASSERTIONS=1 \
--s \"MM_EM_ASMJS ='ON'\" \
 -s EXIT_RUNTIME=0 \
 -s \"BINARYEN_TRAP_MODE='clamp'\" \
 -s PRECISE_F32=1 \
@@ -224,29 +223,29 @@ set(
     #
     # --closure 1 \
 )
-#set(
-#    EMCC_LINKER_FLAGS__WASM
-#    "${EMCC_LINKER_FLAGS___BASE} \
-#-s WASM=1 \
-#-Oz \
-#-s \"BINARYEN_METHOD='native-wasm'\" \
-#-s ALLOW_MEMORY_GROWTH=1 \
-#--post-js ${CMAKE_CURRENT_LIST_DIR}/src/module-post.js \
-#"
-#    # -g \
-#)
+set(
+    EMCC_LINKER_FLAGS__WASM
+    "${EMCC_LINKER_FLAGS___BASE} \
+-s WASM=1 \
+-Oz \
+-s \"BINARYEN_METHOD='native-wasm'\" \
+-s ALLOW_MEMORY_GROWTH=1 \
+--post-js ${CMAKE_CURRENT_LIST_DIR}/src/module-post.js \
+"
+    # -g \
+)
 #
 #    -s EXPORTED_FUNCTIONS='[\"_sc_reduce\", \"_sc_reduce32\", \"_sc_check\", \"_sc_add\", \"_ge_fromfe_frombytes_vartime\", \"_ge_mul8\", \"_ge_p1p1_to_p3\", \"_ge_p3_tobytes\", \"_ge_scalarmult\", \"_ge_tobytes\", \"_sc_sub\", \"_sc_mulsub\", \"_ge_scalarmult_base\", \"_sc_0\", \"_ge_double_scalarmult_base_vartime\", \"_ge_double_scalarmult_precomp_vartime\", \"_ge_frombytes_vartime\", \"_ge_dsm_precomp\"]' \
 #
 #
-##message(STATUS "EMCC_LINKER_FLAGS__WASM ${EMCC_LINKER_FLAGS__WASM}")
+message(STATUS "EMCC_LINKER_FLAGS__WASM ${EMCC_LINKER_FLAGS__WASM}")
 message(STATUS "EMCC_LINKER_FLAGS__ASMJS ${EMCC_LINKER_FLAGS__ASMJS}")
 #
 add_executable(MyMoneroCoreCpp_WASM ${SRC_FILES})
 add_executable(MyMoneroCoreCpp_ASMJS ${SRC_FILES})
 #
 set_target_properties(MyMoneroCoreCpp_WASM PROPERTIES LINK_FLAGS "${EMCC_LINKER_FLAGS__WASM}")
-##set_target_properties(MyMoneroCoreCpp_ASMJS PROPERTIES LINK_FLAGS "${EMCC_LINKER_FLAGS__ASMJS}")
+set_target_properties(MyMoneroCoreCpp_ASMJS PROPERTIES LINK_FLAGS "${EMCC_LINKER_FLAGS__ASMJS}")
 #
 # set_target_properties(MyMoneroCoreCpp_WASM PROPERTIES SUFFIX ".html")
 # set_target_properties(MyMoneroCoreCpp_ASMJS PROPERTIES SUFFIX ".html")
@@ -262,15 +261,15 @@ set_target_properties(MyMoneroCoreCpp_WASM PROPERTIES LINK_FLAGS "${EMCC_LINKER_
 # boost_timer
 # boost_wserialization
 #
-#target_link_libraries(
-#    MyMoneroCoreCpp_WASM
-#    #
-###    boost_chrono
-###    boost_system
-###    boost_thread
-###    #
-##    ${log-lib}
-#)
+target_link_libraries(
+    MyMoneroCoreCpp_WASM
+    #
+    boost_chrono
+    boost_system
+    boost_thread
+    #
+    ${log-lib}
+)
 target_link_libraries(
     MyMoneroCoreCpp_ASMJS
     #
