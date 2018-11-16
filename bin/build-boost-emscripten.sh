@@ -13,7 +13,7 @@ if [ ! -d "$SRC_PATH" ]; then
   exit 1
 fi
 
-if [ -z "$EMSCRIPTEN" ]; then
+if [[ -z "$EMSCRIPTEN" ]]; then
   echo "EMSCRIPTEN MUST BE DEFINED!"
   exit -1  
 fi
