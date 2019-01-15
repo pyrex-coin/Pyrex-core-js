@@ -1,6 +1,6 @@
 //
 //  index.cpp
-//  Copyright (c) 2014-2018, MyMonero.com
+//  Copyright (c) 2014-2019, MyMonero.com
 //
 //  All rights reserved.
 //
@@ -35,12 +35,14 @@
 using namespace emscripten;
 //
 #include "serial_bridge_index.hpp"
+#include "emscr_async_send_bridge.hpp"
 //
 EMSCRIPTEN_BINDINGS(my_module)
 { // C++ -> JS
-	//
-    emscripten::function("send_step1__prepare_params_for_get_decoys", &serial_bridge::send_step1__prepare_params_for_get_decoys);
-    emscripten::function("send_step2__try_create_transaction", &serial_bridge::send_step2__try_create_transaction);
+    emscripten::function("send_funds", &emscr_async_bridge::send_funds);
+    emscripten::function("send_cb_I__got_unspent_outs", &emscr_async_bridge::send_cb_I__got_unspent_outs);
+    emscripten::function("send_cb_II__got_random_outs", &emscr_async_bridge::send_cb_II__got_random_outs);
+    emscripten::function("send_cb_III__submitted_tx", &emscr_async_bridge::send_cb_III__submitted_tx);
     //
     emscripten::function("decode_address", &serial_bridge::decode_address);
     emscripten::function("is_subaddress", &serial_bridge::is_subaddress);
@@ -57,12 +59,16 @@ EMSCRIPTEN_BINDINGS(my_module)
     emscripten::function("address_and_keys_from_seed", &serial_bridge::address_and_keys_from_seed);
     //
     emscripten::function("estimated_tx_network_fee", &serial_bridge::estimated_tx_network_fee);
+    emscripten::function("estimate_rct_tx_size", &serial_bridge::estimate_rct_tx_size);
     //
     emscripten::function("generate_key_image", &serial_bridge::generate_key_image);
     emscripten::function("generate_key_derivation", &serial_bridge::generate_key_derivation);
     emscripten::function("derive_public_key", &serial_bridge::derive_public_key);
     emscripten::function("derive_subaddress_public_key", &serial_bridge::derive_subaddress_public_key);
     emscripten::function("decodeRct", &serial_bridge::decodeRct);
+    emscripten::function("decodeRctSimple", &serial_bridge::decodeRctSimple);
+    emscripten::function("derivation_to_scalar", &serial_bridge::derivation_to_scalar);
+    emscripten::function("encrypt_payment_id", &serial_bridge::encrypt_payment_id);
     //
 }
 extern "C"
