@@ -37,8 +37,8 @@ module.exports =
 	entry: "./index.js",
 	output: {
 		path: path.resolve(__dirname, "build"),
-		filename: "mymonero-core.js",
-        library: "mymonero_core_js",
+		filename: "Pyrex-core-js",
+        library: "Pyrex-core-js",
         libraryTarget: "umd"
 	},
 	cache: false,
