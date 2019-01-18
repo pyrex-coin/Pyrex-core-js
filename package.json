@@ -1,7 +1,7 @@
 {
   "name": "mymonero-core-js",
   "version": "1.1.0",
-  "description": "The JS library containing the Monero crypto plus lightweight wallet functions behind the official MyMonero apps",
+  "description": "The JS library containing the Pyrexcoin crypto plus lightweight wallet functions behind the official MyMonero apps",
   "main": "index.js",
   "repository": {
     "type": "git",
