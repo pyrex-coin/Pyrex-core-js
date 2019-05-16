@@ -37,8 +37,8 @@ module.exports =
 	entry: "./index.js",
 	output: {
 		path: path.resolve(__dirname, "build"),
-		filename: "Pyrex-core-js",
-        library: "Pyrex-core-js",
+		filename: "mypyrexcoin-core.js",
+        library: "Pyrex_core_js",
         libraryTarget: "umd"
 	},
 	cache: false,
